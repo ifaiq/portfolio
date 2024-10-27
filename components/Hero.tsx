@@ -17,7 +17,7 @@ const Hero = () => {
          */}
         <div>
           <Spotlight
-            className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+            className="-top-20 -left-10 md:-left-32 md:-top-20 h-screen"
             fill="white"
           />
           <Spotlight
@@ -53,11 +53,14 @@ const Hero = () => {
              */}
             <TextGenerateEffect
               words="Transforming Concepts into Seamless User Experiences"
-              className="text-center text-[40px] md:text-5xl lg:text-6xl"
+              className="text-center text-[40px] md:text-3xl lg:text-4xl"
             />
 
             <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-              Hi! I&apos;m Faiq, a Next.js Developer based in Croatia.
+              Hello, I’m Faiq Shariff a Senior Full Stack Software Engineer and
+              Certified Personal Trainer. By day, I architect and code scalable
+              software solutions, and by night, I’m committed to helping clients
+              achieve their fitness goals through customized training programs.
             </p>
 
             <a href="#about">

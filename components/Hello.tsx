@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const greetings = [
+  { text: 'سلام', language: 'Urdu' },
   { text: 'Hola', language: 'Spanish' },
-  { text: 'नमस्ते', language: 'Hindi' },
   { text: 'Ciao', language: 'Italian' },
   { text: '你好', language: 'Chinese' },
   { text: 'Bonjour', language: 'French' },

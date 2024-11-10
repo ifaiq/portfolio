@@ -1,31 +1,27 @@
-"use client";
+'use client';
 
-import { navItems } from "@/data";
+import AnimatedGreetings from '@/components/Hello';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import PreviousWork from '@/components/PreviousWork';
+import Goodbye from '@/components/Goodbye';
+import { ReactLenis } from '@studio-freight/react-lenis';
 
-import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-import Footer from "@/components/Footer";
-import Clients from "@/components/Clients";
-import Approach from "@/components/Approach";
-import Experience from "@/components/Experience";
-import RecentProjects from "@/components/RecentProjects";
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
-
-const Home = () => {
-  return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full">
-        <FloatingNav />
-        <Hero />
-        <Grid />
-        <RecentProjects />
-        {/* <Clients /> */}
-        <Experience />
-        {/* <Approach /> */}
-        <Footer />
-      </div>
-    </main>
-  );
+const lenisOptions = {
+  lerp: 0.05,
+  duration: 1.2,
+  smoothTouch: false,
+  smooth: true,
 };
 
-export default Home;
+export default function Home() {
+  return (
+    <ReactLenis root options={lenisOptions}>
+      <AnimatedGreetings />
+      <Hero />
+      <About />
+      <PreviousWork />
+      <Goodbye />
+    </ReactLenis>
+  );
+}

@@ -1,72 +1,64 @@
-import { FaLocationArrow } from "react-icons/fa6";
+'use client';
 
-import MagicButton from "./MagicButton";
-import { Spotlight } from "./ui/Spotlight";
-import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import { BentoGrid } from "./ui/BentoGrid";
-import { FloatingNav } from "./ui/FloatingNavbar";
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { FaCaretDown } from 'react-icons/fa';
+import { HERO_LINKS } from '@/lib/consts';
+import { GrFormNextLink } from 'react-icons/gr';
 
-const Hero = () => {
+const Hero: React.FC = () => {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScroll = window.innerHeight;
+      const newScale = 1 + (scrollPosition / maxScroll) * 0.2;
+      setScale(newScale > 1.2 ? 1.2 : newScale);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section id="home">
-      <BentoGrid className="w-full py-20"></BentoGrid>
-      <div className="pb-20 pt-36">
-        {/**
-         *  UI: Spotlights
-         *  Link: https://ui.aceternity.com/components/spotlight
-         */}
-        <div>
-          <Spotlight
-            className="-top-20 -left-10 md:-left-32 md:-top-20 h-screen"
-            fill="white"
-          />
-          <Spotlight
-            className="h-[80vh] w-[50vw] top-10 left-full"
-            fill="purple"
-          />
-          <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
+    <div className="relative flex h-screen w-full items-center justify-center overflow-hidden text-[#f0f0f0]">
+      <div
+        className="relative flex flex-col items-center text-center transition-transform duration-300 ease-out"
+        style={{ transform: `scale(${scale})` }}
+      >
+        <p className="mb-4 text-4xl sm:text-5xl md:text-6xl">
+          Hey, I&apos;m <span className="underline">Noah</span>
+        </p>
+        <p className="mb-8 text-5xl font-bold sm:text-7xl md:text-9xl">Software Engineer</p>
+        <p className="mx-auto mb-8 max-w-2xl text-xl opacity-80 sm:text-2xl">
+          I build stuff and I love doing so :{')'}
+        </p>
+
+        <div className="flex space-x-4">
+          {HERO_LINKS.map((link, index) => (
+            <Link
+              key={index}
+              href={link.src}
+              target="_blank"
+              className="rounded-xl border border-[#d1d1d1] bg-[#EEECEC] p-3 text-[#494949] transition-all duration-300 hover:scale-110 hover:bg-opacity-80"
+            >
+              {link.icon}
+            </Link>
+          ))}
         </div>
 
-        {/**
-         *  UI: grid
-         *  change bg color to bg-black-100 and reduce grid color from
-         *  0.2 to 0.03
-         */}
-        <div
-          className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
-       absolute top-0 left-0 flex items-center justify-center"
-        >
-          {/* Radial gradient for the container to give a faded look */}
-          <div
-            // chnage the bg to bg-black-100, so it matches the bg color and will blend in
-            className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100
-         bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
-          />
-        </div>
-
-        <div className="flex justify-center relative my-20 z-10">
-          <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-            {/**
-             *  Link: https://ui.aceternity.com/components/text-generate-effect
-             *
-             *  change md:text-6xl, add more responsive code
-             */}
-            <TextGenerateEffect
-              words="Full Stack Developer & Personal Trainer"
-              className="text-center text-[40px] md:text-5xl lg:text-6xl"
-            />
-
-            <a href="#about">
-              <MagicButton
-                title="Show my work"
-                icon={<FaLocationArrow />}
-                position="right"
-              />
-            </a>
-          </div>
+        <div className="mt-8">
+          <Link href="https://github.com/NoahGdev/Next-Portfolio" className="text-2xl font-bold hover:underline">
+            Source Code <GrFormNextLink className="inline" />
+          </Link>
         </div>
       </div>
-    </section>
+
+      <div className="absolute bottom-8 flex flex-col items-center">
+        <FaCaretDown className="duration-2000 animate-bounce text-4xl text-[#f0f0f0]" />
+      </div>
+    </div>
   );
 };
 

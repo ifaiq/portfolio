@@ -1,14 +1,18 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata } from 'next';
+import { Hanken_Grotesk } from 'next/font/google';
+import './globals.css';
+import Navbar from '@/components/Navbar';
+import { Analytics } from '@vercel/analytics/react';
 
-import "./globals.css";
-import { ThemeProvider } from "./provider";
-
-const inter = Inter({ subsets: ["latin"] });
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '700', '800'],
+  variable: '--font-hanken-grotesk',
+});
 
 export const metadata: Metadata = {
-  title: "Faiq's Portfolio",
-  description: "",
+  title: 'Noah Gomes',
+  description: 'Welcome to my portfolio website, check out the source code if you like and leave a star :)',
 };
 
 export default function RootLayout({
@@ -18,18 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/jsm-logo.png" sizes="any" />
-      </head>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+      <body className={`select-none bg-[#000] antialiased ${hankenGrotesk.className}`}>
+        <Navbar />
+        {children}
+        <Analytics />
       </body>
     </html>
   );

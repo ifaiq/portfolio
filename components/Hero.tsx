@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
         style={{ transform: `scale(${scale})` }}
       >
         <p className="mb-4 text-4xl sm:text-5xl md:text-6xl">
-          Hey, I&apos;m <span className="underline">Noah</span>
+          Hey, I&apos;m <span className="underline">Faiq</span>
         </p>
         <p className="mb-8 text-5xl font-bold sm:text-7xl md:text-9xl">Software Engineer</p>
         <p className="mx-auto mb-8 max-w-2xl text-xl opacity-80 sm:text-2xl">
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="mt-8">
-          <Link href="https://github.com/NoahGdev/Next-Portfolio" className="text-2xl font-bold hover:underline">
+          <Link href="https://github.com/ifaiq" className="text-2xl font-bold hover:underline">
             Source Code <GrFormNextLink className="inline" />
           </Link>
         </div>

@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`select-none bg-[#000] antialiased ${hankenGrotesk.className}`}>
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
         <Analytics />
       </body>

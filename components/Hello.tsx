@@ -9,7 +9,6 @@ const greetings = [
   { text: 'Ciao', language: 'Italian' },
   { text: '你好', language: 'Chinese' },
   { text: 'Bonjour', language: 'French' },
-  { text: '안녕하세요', language: 'Korean' },
   { text: 'مرحبا', language: 'Arabic' },
   { text: 'Hallo', language: 'German' },
   { text: 'Hello!', language: 'English' },

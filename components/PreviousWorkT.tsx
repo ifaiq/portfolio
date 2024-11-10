@@ -3,7 +3,7 @@ import React from 'react';
 import { Timeline } from '@/components/ui/timeline';
 import Link from 'next/link';
 
-export default function PreviousWork() {
+export default function PreviousWorkT() {
   const data = [
     {
       title: 'Clippie AI',

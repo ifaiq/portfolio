@@ -2,10 +2,11 @@
 
 import AnimatedGreetings from '@/components/Hello';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
-import PreviousWork from '@/components/PreviousWork';
+import About from '@/components/AboutE';
+import PreviousWork from '@/components/PreviousWorkT';
 import Goodbye from '@/components/Goodbye';
 import { ReactLenis } from '@studio-freight/react-lenis';
+import Intro from '@/components/Intro';
 
 const lenisOptions = {
   lerp: 0.05,
@@ -16,12 +17,13 @@ const lenisOptions = {
 
 export default function Home() {
   return (
-    <ReactLenis root options={lenisOptions}>
+    <div>
       <AnimatedGreetings />
+      {/* <Intro /> */}
       <Hero />
-      <About />
+      {/* <About />
       <PreviousWork />
-      <Goodbye />
-    </ReactLenis>
+      <Goodbye /> */}
+    </div>
   );
 }

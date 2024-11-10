@@ -4,8 +4,12 @@ import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Code, Dumbbell } from "lucide-react"
 import { useRouter } from 'next/navigation'
+import { SetStateAction } from 'react'
 
-export default function Summary() {
+interface SummaryProps {
+    onNavigate: (profile: SetStateAction<string>) => void;
+}
+export default function Summary({ onNavigate }: SummaryProps) {
     const router = useRouter()
     const sceneVariants = {
         initial: { opacity: 0, y: 50 },

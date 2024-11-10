@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ChevronLeft } from "lucide-react"
 import About from './AboutE'
 
-export default function Trainer({ onBack }) {
+export default function Trainer({ onBack }: { onBack: () => void }) {
     const sceneVariants = {
         initial: { opacity: 0, y: 50 },
         enter: { opacity: 1, y: 0 },

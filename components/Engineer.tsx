@@ -8,7 +8,7 @@ import AboutE from './AboutE'
 import PreviousWorkE from './PreviousWorkE'
 import Goodbye from './Goodbye'
 
-export default function Engineer({ onBack }) {
+export default function Engineer({ onBack }: { onBack: () => void }) {
     const lenisOptions = {
         lerp: 0.05,
         duration: 1.2,

@@ -11,10 +11,10 @@ export const HERO_LINKS = [
     src: 'https://linkedin.com/in/ifaiq',
   },
 
-  {
-    icon: <IoDocumentTextOutline size={24} />,
-    src: '/resume',
-  },
+  // {
+  //   icon: <IoDocumentTextOutline size={24} />,
+  //   src: '/resume',
+  // },
 ];
 
 export const PROJECTS = [

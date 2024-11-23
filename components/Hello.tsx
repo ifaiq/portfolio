@@ -4,14 +4,11 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const greetings = [
+  { text: 'Hello!', language: 'English' },
   { text: 'سلام', language: 'Urdu' },
   { text: 'Hola', language: 'Spanish' },
-  { text: 'Ciao', language: 'Italian' },
-  { text: '你好', language: 'Chinese' },
-  { text: 'Bonjour', language: 'French' },
   { text: 'مرحبا', language: 'Arabic' },
   { text: 'Hallo', language: 'German' },
-  { text: 'Hello!', language: 'English' },
 ];
 
 const AnimatedGreetings: React.FC = () => {

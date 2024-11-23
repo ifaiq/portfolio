@@ -6,44 +6,45 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ChevronLeft } from "lucide-react"
 import About from './AboutE'
+import ReactLenis from '@studio-freight/react-lenis'
+import PreviousWorkT from './PreviousWorkT'
+import AboutT from './AboutT'
+import Goodbye from './Goodbye'
 
 export default function Trainer({ onBack }: { onBack: () => void }) {
-    const sceneVariants = {
-        initial: { opacity: 0, y: 50 },
-        enter: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: -50 }
-    }
-
+    const lenisOptions = {
+        lerp: 0.05,
+        duration: 1.2,
+        smoothTouch: false,
+        smooth: true,
+    };
     return (
-        <motion.div
-            key="trainer"
-            initial="initial"
-            animate="enter"
-            exit="exit"
-            variants={sceneVariants}
-            transition={{ duration: 0.5 }}
-            className="w-full max-w-2xl"
-        >
-            <Card>
-                <CardContent className="p-6 space-y-4">
-                    <div className="flex items-center justify-between">
-                        <h2 className="text-2xl font-semibold">Personal Trainer</h2>
-                        <Button variant="ghost" onClick={onBack}>
-                            <ChevronLeft className="h-4 w-4 mr-2" /> Back
+        <ReactLenis root options={lenisOptions}>
+            <div className="min-h-screen bg-gray-900">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="relative w-full"
+                >
+                    <div className="fixed top-6 left-6 z-50">
+                        <Button
+                            variant="outline"
+                            onClick={onBack}
+                            className="flex items-center space-x-2"
+                        >
+                            <ChevronLeft className="h-4 w-4" />
+                            <span>Back</span>
                         </Button>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-400">
-                        Dedicated to helping clients achieve their fitness goals.
-                    </p>
-                    <ul className="list-disc list-inside text-gray-600 dark:text-gray-400">
-                        <li>Customized Workout Plans</li>
-                        <li>Nutrition Coaching</li>
-                        <li>Strength Training</li>
-                        <li>Functional Fitness</li>
-                    </ul>
-                </CardContent>
-            </Card>
-            <About />
-        </motion.div>
+
+                    <div className="w-full">
+                        <AboutT />
+                        <PreviousWorkT />
+                        <Goodbye />
+                    </div>
+                </motion.div>
+            </div>
+        </ReactLenis>
     )
 }

@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`select-none bg-[#000] antialiased ${hankenGrotesk.className}`}>
+      <body className={`select-none bg-gradient-to-r from-white to-black antialiased ${hankenGrotesk.className}`}>
         {/* <Navbar /> */}
         {children}
         <Analytics />

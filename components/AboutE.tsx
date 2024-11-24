@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { IoDocumentTextOutline } from 'react-icons/io5';
+import { HERO_LINKS } from '@/lib/consts';
 
 const AboutE: React.FC = () => {
   return (
@@ -23,12 +24,25 @@ const AboutE: React.FC = () => {
           <Image src="/faiq.jpg" alt="Faiq" width={295} height={295} className="h-full w-full object-cover" />
         </div>
       </div>
-      <a href="/FaiqShariff_CV.pdf" download>
-        <button className="flex items-center space-x-2 rounded-xl border border-[#292929] p-2 font-semibold text-[#f0f0f0] transition-all duration-300 hover:scale-105 sm:p-3">
-          <IoDocumentTextOutline size={20} className="sm:text-2xl" />
-          <span className="text-sm sm:text-base">View my resume</span>
-        </button>
-      </a>
+      <div className="flex space-x-4">
+        {HERO_LINKS.map((link, index) => (
+          <Link
+            key={index}
+            href={link.src}
+            target="_blank"
+            className="rounded-xl border border-[#d1d1d1] bg-[#EEECEC] p-3 text-[#494949] transition-all duration-300 hover:scale-110 hover:bg-opacity-80"
+          >
+            {link.icon}
+          </Link>
+        ))}
+        <a href="/FaiqShariff_CV.pdf" download>
+          <button className="flex items-center space-x-2 rounded-xl border border-[#d1d1d1] bg-[#EEECEC] p-2 font-semibold text-[#494949] transition-all duration-300 hover:scale-105 sm:p-3">
+            <IoDocumentTextOutline size={20} className="sm:text-2xl" />
+            <span className="text-sm sm:text-base">View my resume</span>
+          </button>
+        </a>
+      </div>
+
     </div>
   );
 };

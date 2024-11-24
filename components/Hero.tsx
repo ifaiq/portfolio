@@ -1,10 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { FaCaretDown } from 'react-icons/fa';
-import { HERO_LINKS } from '@/lib/consts';
-import { GrFormNextLink } from 'react-icons/gr';
 import Intro from './Intro';
 
 const Hero: React.FC = () => {
@@ -36,18 +32,7 @@ const Hero: React.FC = () => {
           I build stuff and I love doing so :{')'}
         </p> */}
         <Intro />
-        <div className="flex space-x-4">
-          {HERO_LINKS.map((link, index) => (
-            <Link
-              key={index}
-              href={link.src}
-              target="_blank"
-              className="rounded-xl border border-[#d1d1d1] bg-[#EEECEC] p-3 text-[#494949] transition-all duration-300 hover:scale-110 hover:bg-opacity-80"
-            >
-              {link.icon}
-            </Link>
-          ))}
-        </div>
+
 
         {/* <div className="mt-8">
           <Link href="https://github.com/ifaiq" className="text-2xl font-bold hover:underline">

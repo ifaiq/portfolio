@@ -4,11 +4,11 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const greetings = [
-  { text: 'Hello!', language: 'English' },
-  { text: 'سلام', language: 'Urdu' },
-  { text: 'Hola', language: 'Spanish' },
-  { text: 'مرحبا', language: 'Arabic' },
-  { text: 'Hallo', language: 'German' },
+  // { text: 'Hello!', language: 'English' },
+  // { text: 'سلام', language: 'Urdu' },
+  // { text: 'Hola', language: 'Spanish' },
+  // { text: 'مرحبا', language: 'Arabic' },
+  // { text: 'Hallo', language: 'German' },
 ];
 
 const AnimatedGreetings: React.FC = () => {
@@ -39,7 +39,7 @@ const AnimatedGreetings: React.FC = () => {
     <AnimatePresence>
       {!isComplete && (
         <motion.div
-          className="fixed inset-0 z-20 bg-[#f0f0f0] text-[#000]"
+          className="fixed inset-0 z-20 bg-[#000000] text-[#000]"
           initial={{ y: 0, borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
           exit={{
             y: '-100%',

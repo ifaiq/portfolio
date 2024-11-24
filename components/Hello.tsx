@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const greetings = [
+const greetings: string | any[] = [
   // { text: 'Hello!', language: 'English' },
   // { text: 'سلام', language: 'Urdu' },
   // { text: 'Hola', language: 'Spanish' },

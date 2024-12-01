@@ -109,10 +109,11 @@ export default function PreviousWorkT() {
       title: 'Holistic Fitness',
       content: (
         <div>
-          <p className="mb-8 text-2xl font-normal text-neutral-200 md:text-sm">
+          <p className="pl-5 text-neutral-300">
             True fitness is about more than just working out — it’s a lifestyle that integrates physical strength, mental resilience, and emotional balance. I focus on helping clients develop sustainable habits that enhance their overall well-being.
 
           </p>
+          <br />
           <ul className="list-disc pl-5 text-neutral-300">
             <li><strong>Strength:</strong> Building functional strength to enhance daily life and athletic performance.</li>
             <li><strong>Conditioning:</strong> Improving cardiovascular endurance, agility, and stamina for a well-rounded fitness base.</li>
@@ -141,8 +142,10 @@ export default function PreviousWorkT() {
       title: 'Nutrition Guidance',
       content: (
         <div>
-          <p className="mb-4 flex flex-col text-xs font-normal text-neutral-200 md:text-sm">
+          <p className="pl-5 text-neutral-300">
             Nutrition is the cornerstone of health and fitness. I emphasize a balanced and personalized approach that fuels your goals, whether that’s muscle gain, fat loss, or general well-being.</p>
+          <br />
+
           <ul className="list-disc pl-5 text-neutral-300">
             <li><strong>Fueling Performance:</strong> Understanding macronutrients to optimize energy levels and recovery.</li>
             <li><strong>Sustainable Habits:</strong> Creating a nutrition plan that fits your lifestyle and long-term goals.</li>
@@ -167,6 +170,8 @@ export default function PreviousWorkT() {
           <p className="mb-8 text-xs font-normal text-neutral-200 md:text-sm">
             Whether you&apos;re lifting weights, boxing, or working on functional movement, my philosophy prioritizes building a strong, resilient body. Strength and conditioning aren’t just about looking good — they’re about moving better, feeling better, and performing at your best.
           </p>
+          <br />
+
           <ul className="list-disc pl-5 text-neutral-300">
             <li><strong>Progressive Overload:</strong> Gradually increasing intensity to safely build strength.</li>
             <li><strong>Functional Training:</strong> Exercises designed to mimic real-life movements for improved mobility and stability.</li>

@@ -10,13 +10,14 @@ export default function Intro() {
     const [activeProfile, setActiveProfile] = useState('summary')
 
     return (
-        <div className="bg-gradient-to-r from-black rounded-xl to-white flex flex-col items-center justify-center p-6">
+        <div className="flex flex-col items-center justify-center p-4 md:p-8 lg:p-12">
             <AnimatePresence mode="wait">
                 {activeProfile === 'summary' && (
                     <Summary onNavigate={(profile: SetStateAction<string>) => setActiveProfile(profile)} />
                 )}
                 {activeProfile === 'engineer' && (
                     <Engineer onBack={() => setActiveProfile('summary')} />
+
                 )}
                 {activeProfile === 'trainer' && (
                     <Trainer onBack={() => setActiveProfile('summary')} />

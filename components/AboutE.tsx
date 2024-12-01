@@ -35,12 +35,11 @@ const AboutE: React.FC = () => {
             {link.icon}
           </Link>
         ))}
-        <a href="/FaiqShariff_CV.pdf" download>
-          <button className="flex items-center space-x-2 rounded-xl border border-[#d1d1d1] bg-[#EEECEC] p-2 font-semibold text-[#494949] transition-all duration-300 hover:scale-105 sm:p-3">
-            <IoDocumentTextOutline size={20} className="sm:text-2xl" />
-            <span className="text-sm sm:text-base">View my resume</span>
-          </button>
-        </a>
+        <Link href="/FaiqShariff_CV.pdf" download
+          className="rounded-xl border border-[#d1d1d1] bg-[#EEECEC] p-3 text-[#494949] transition-all duration-300 hover:scale-110 hover:bg-opacity-80"
+        >
+          <span className="text-sm sm:text-base">Resume</span>
+        </Link>
       </div>
 
     </div>

@@ -37,7 +37,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                         My Philosophy
                     </h2>
                     <h4 className="max-w-4xl text-lg text-neutral-300 md:text-base">
-                        True fitness is about more than just working out — it’s a lifestyle that integrates physical strength, mental resilience, and emotional balance. I focus on helping clients develop sustainable habits that enhance their overall well-being.
+                        A balanced approach to physical, mental, and emotional well-being is the foundation of true health. Fitness is not just about building strength in the gym; it&apos;s about nurturing a mindset that supports resilience and self-love. While physical exercise helps to improve body composition and performance, mental well-being is just as crucial. It involves cultivating a positive mindset, managing stress, and fostering emotional resilience. Together, these elements create a sustainable foundation for long-term health and success. I believe that every aspect of life is interconnected, and when we work on improving our physical fitness, we also enhance our mental clarity and emotional stability. This holistic approach ensures that every client can thrive, not just in their workouts, but in every part of their life.
                     </h4>
                 </div>
 

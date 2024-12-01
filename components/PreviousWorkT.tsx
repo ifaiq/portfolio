@@ -167,7 +167,7 @@ export default function PreviousWorkT() {
       title: 'Strength & Conditioning',
       content: (
         <div>
-          <p className="mb-8 text-xs font-normal text-neutral-200 md:text-sm">
+          <p className="pl-5 text-neutral-300">
             Whether you&apos;re lifting weights, boxing, or working on functional movement, my philosophy prioritizes building a strong, resilient body. Strength and conditioning aren’t just about looking good — they’re about moving better, feeling better, and performing at your best.
           </p>
           <br />

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { IoDocumentTextOutline } from 'react-icons/io5';
 import { HERO_LINKS } from '@/lib/consts';
+import { FaFileDownload, FaLinkedin, FaMailBulk } from 'react-icons/fa';
 
 const AboutE: React.FC = () => {
   return (
@@ -38,8 +39,9 @@ const AboutE: React.FC = () => {
         <Link href="/FaiqShariff_CV.pdf" download
           className="rounded-xl border border-[#d1d1d1] bg-[#EEECEC] p-3 text-[#494949] transition-all duration-300 hover:scale-110 hover:bg-opacity-80"
         >
-          <span className="text-sm sm:text-base">Resume</span>
+          <span className="text-sm sm:text-base"><FaFileDownload size={24} /></span>
         </Link>
+
       </div>
 
     </div>

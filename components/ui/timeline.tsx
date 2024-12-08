@@ -35,8 +35,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           Check out my previous work
         </h2>
         <p className="max-w-sm text-sm text-neutral-300 md:text-base">
-          I have been working on a lot of projects/compannies over the years. Here are some of the highlights.
-        </p>
+          Software Engineer | Full Stack Expertise in Node.js & Python | Architecting Intelligent, Scalable Backends        </p>
       </div>
 
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">

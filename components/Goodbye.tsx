@@ -3,8 +3,12 @@ import TextReveal from '@/components/ui/text-reveal';
 
 const Goodbye: React.FC = () => {
   return (
-    <div className="z-10 flex min-h-64 items-center justify-center rounded-lg bg-black">
-      <TextReveal text="See ya later!" />
+    <div className="flex min-h-screen items-center justify-center bg-black">
+      <div className="text-center text-white space-y-4">
+        <TextReveal text="
+        ✉️faiq55@yahoo.com 
+        📱+92-3222339643" />
+      </div>
     </div>
   );
 };

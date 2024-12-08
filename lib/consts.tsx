@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaMailBulk, FaTwitter } from 'react-icons/fa';
 import { IoDocumentTextOutline } from 'react-icons/io5';
 
 export const HERO_LINKS = [

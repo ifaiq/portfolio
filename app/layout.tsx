@@ -12,7 +12,17 @@ const hankenGrotesk = Hanken_Grotesk({
 
 export const metadata: Metadata = {
   title: 'Faiq Shariff',
-  description: 'Welcome to my portfolio website, check out the source code if you like and leave a star :)',
+  description: 'Welcome to my portfolio website',
+  openGraph: {
+    title: 'Faiq Shariff',
+    description: 'Welcome to my portfolio website',
+    images: [
+      {
+        url: '/faiq.jpg',
+        alt: 'Faiq Shariff Portfolio', // Optional: Alt text for the image
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

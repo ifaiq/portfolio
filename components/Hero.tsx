@@ -3,12 +3,18 @@ import Parser from 'rss-parser';
 import { projects } from './Projects'
 const parser = new Parser();
 
+interface BlogItem {
+  guid: string;
+  title: string;
+  contentSnippet: string;
+  link: string;
+}
 const fetchMediumBlogs = async () => {
   const response = await fetch(`https://corsproxy.io/?url=https://medium.com/feed/@ifaiq`);
   const text = await response.text();
   const parser = new Parser();
   const feed = await parser.parseString(text);
-  return feed.items;
+  return feed.items as BlogItem[];
 };
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('about');

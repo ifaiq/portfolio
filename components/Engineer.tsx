@@ -6,7 +6,6 @@ import { ChevronLeft } from "lucide-react"
 import { ReactLenis } from '@studio-freight/react-lenis'
 import AboutE from './AboutE'
 import PreviousWorkE from './PreviousWorkE'
-import Goodbye from './Projects'
 
 export default function Engineer({ onBack }: { onBack: () => void }) {
     const lenisOptions = {
@@ -39,7 +38,6 @@ export default function Engineer({ onBack }: { onBack: () => void }) {
                     <div className="w-full">
                         <AboutE />
                         <PreviousWorkE />
-                        <Goodbye />
                     </div>
                 </motion.div>
             </div>

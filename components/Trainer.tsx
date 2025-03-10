@@ -9,7 +9,6 @@ import About from './AboutE'
 import ReactLenis from '@studio-freight/react-lenis'
 import PreviousWorkT from './PreviousWorkT'
 import AboutT from './AboutT'
-import Goodbye from './Projects'
 
 export default function Trainer({ onBack }: { onBack: () => void }) {
     const lenisOptions = {
@@ -41,7 +40,6 @@ export default function Trainer({ onBack }: { onBack: () => void }) {
                     <div className="w-full">
                         <AboutT />
                         <PreviousWorkT />
-                        <Goodbye />
                     </div>
                 </motion.div>
             </div>

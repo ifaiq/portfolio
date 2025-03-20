@@ -1,30 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Parser from 'rss-parser';
 import { projects } from './Projects'
-const parser = new Parser();
 
-interface BlogItem {
-  guid: string;
-  title: string;
-  contentSnippet: string;
-  link: string;
-}
-const fetchMediumBlogs = async () => {
-  const response = await fetch(`https://corsproxy.io/?url=https://medium.com/feed/@ifaiq`);
-  const text = await response.text();
-  const parser = new Parser();
-  const feed = await parser.parseString(text);
-  return feed.items as BlogItem[];
-};
+
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('about');
-  const [blogs, setBlogs] = useState<Array<{ guid: string; title: string; contentSnippet: string; link: string }>>([]);
-  useEffect(() => {
-    if (activeSection === 'blogs') {
-      fetchMediumBlogs().then(setBlogs);
-    }
-  }, [activeSection]);
-
+  const mediumProfileUrl = 'https://medium.com/@ifaiq';
   const about = {
     name: "Faiq Shariff",
     title: "Software Engineer",
@@ -65,14 +46,14 @@ const Portfolio = () => {
                   PROJECTS
                 </button>
               </li>
-              {/* <li>
+              <li>
                 <button
-                  onClick={() => setActiveSection('blogs')}
+                  onClick={() => window.open(mediumProfileUrl, '_blank')}
                   className={`text-sm tracking-wide ${activeSection === 'blogs' ? 'font-bold' : ''}`}
                 >
                   BLOGS
                 </button>
-              </li> */}
+              </li>
             </ul>
           </nav>
         </div>
@@ -168,24 +149,19 @@ const Portfolio = () => {
         }
 
         {activeSection === 'blogs' && (
-          <section>
+          <section className="max-w-xl mx-auto text-center">
             <h2 className="text-2xl font-light mb-8">Blogs</h2>
-            <div className="grid grid-cols-1 gap-8">
-              {blogs.map(blog => (
-                <div key={blog?.guid} className="border-b border-gray-200 pb-8 last:border-0">
-                  <h3 className="text-xl font-medium mb-2">{blog?.title}</h3>
-                  <p className="text-gray-700 mb-4">{blog?.contentSnippet}</p>
-                  <a
-                    href={blog?.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium underline hover:no-underline"
-                  >
-                    Read More
-                  </a>
-                </div>
-              ))}
-            </div>
+            <p className="text-lg mb-6">
+              Check out my blogs on Medium:
+            </p>
+            <a
+              href={mediumProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl underline hover:no-underline inline-block mb-8"
+            >
+              Visit My Medium Profile
+            </a>
           </section>
         )}
       </main >

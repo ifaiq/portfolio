@@ -65,14 +65,14 @@ const Portfolio = () => {
                   PROJECTS
                 </button>
               </li>
-              <li>
+              {/* <li>
                 <button
                   onClick={() => setActiveSection('blogs')}
                   className={`text-sm tracking-wide ${activeSection === 'blogs' ? 'font-bold' : ''}`}
                 >
                   BLOGS
                 </button>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>

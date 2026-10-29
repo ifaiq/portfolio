@@ -1,8 +1,5 @@
-<!--
-  One quote per block, written as a blockquote.
-  The last line, in asterisks, becomes the attribution.
-  Delete this comment once you add your first quote.
+> Attaining something worthwhile is often going to be difficult, but just because it's difficult does not mean it's worthwhile.
 
-  > The best way out is always through.
-  > *Robert Frost*
--->
+> Everything you want comes with a cost. Every good thing comes with its own problems. You do not get to choose one without choosing the other.
+
+> Opposition can give you direction even when you haven't figured out your own destination.

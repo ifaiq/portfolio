@@ -3,7 +3,6 @@ export const site = {
   url: 'https://magicfaiq.com',
   tagline: 'Learning to build things that think.',
   email: 'faiq55@yahoo.com',
-  cv: '/FaiqShariff_CV.pdf',
   links: {
     github: 'https://github.com/ifaiq',
     linkedin: 'https://linkedin.com/in/ifaiq',

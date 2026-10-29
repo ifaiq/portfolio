@@ -22,7 +22,7 @@ export default function Home() {
             useful. If it works, nobody notices. If it breaks, everyone does.
           </p>
           <p className="mt-8">
-            I&apos;ve done this for eight years. Right now I do it at 10Pearls, building software for their clients.
+            I&apos;ve done this for eight years, mostly for other people&apos;s products rather than my own.
           </p>
           <p className="mt-6 text-[0.95rem] italic text-muted">{site.tagline}</p>
           <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[0.95rem]">
@@ -112,14 +112,6 @@ export default function Home() {
             at once? What breaks first when the site gets busy?
           </p>
           <p className="mt-4">Outside work: fitness, philosophy, and finding out how things work.</p>
-          <p className="mt-4">
-            Before 10Pearls I worked on online stores, delivery software, phone apps, and a farm sensor that ran on
-            solar power. The longer version is on{' '}
-            <a className="link" href={site.links.linkedin} {...external}>
-              LinkedIn
-            </a>
-            .
-          </p>
         </Section>
 
         <Section id="contact" label="Contact">

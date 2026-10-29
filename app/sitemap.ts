@@ -1,9 +1,11 @@
 ﻿import type { MetadataRoute } from 'next';
 import { site } from '@/lib/content';
 import { getNotes } from '@/lib/notes';
+import { getQuotes } from '@/lib/quotes';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const notes = getNotes();
+  const quotes = getQuotes();
 
   return [
     {
@@ -24,5 +26,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     })),
+    ...(quotes.length > 0
+      ? [
+          {
+            url: `${site.url}/quotes`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly' as const,
+            priority: 0.4,
+          },
+        ]
+      : []),
   ];
 }

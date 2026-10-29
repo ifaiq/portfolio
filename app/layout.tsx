@@ -1,4 +1,4 @@
-﻿import type { Metadata, Viewport } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Newsreader } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { site } from '@/lib/content';

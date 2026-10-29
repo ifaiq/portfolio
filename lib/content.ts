@@ -1,4 +1,4 @@
-﻿export const site = {
+export const site = {
   name: 'Faiq Shariff',
   url: 'https://magicfaiq.com',
   tagline: 'Learning to build things that think.',
@@ -46,3 +46,13 @@ export const lately = [
   'Keeping software simple enough that someone new can understand it.',
   'The gym, which has nothing to do with the other two.',
 ];
+
+export type Testimonial = {
+  /** What they said. Keep it short and specific. */
+  text: string;
+  /** Who said it. A role is enough: "Engineering lead, client project". */
+  who: string;
+};
+
+/** The homepage shows these once there is at least one. */
+export const testimonials: Testimonial[] = [];

@@ -1,9 +1,11 @@
 ﻿import Link from 'next/link';
 import { site } from '@/lib/content';
 import { getNoteIndex } from '@/lib/notes';
+import { getQuotes } from '@/lib/quotes';
 
 export function SiteFooter() {
   const hasNotes = getNoteIndex().length > 0;
+  const hasQuotes = getQuotes().length > 0;
 
   return (
     <footer className="mx-auto w-full max-w-[36rem] px-6 pb-16">
@@ -20,6 +22,14 @@ export function SiteFooter() {
               {' · '}
               <Link className="link" href="/notes">
                 Notes
+              </Link>
+            </>
+          ) : null}
+          {hasQuotes ? (
+            <>
+              {' · '}
+              <Link className="link" href="/quotes">
+                Quotes
               </Link>
             </>
           ) : null}

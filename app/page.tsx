@@ -1,5 +1,5 @@
 ﻿import Link from 'next/link';
-import { current, lately, site } from '@/lib/content';
+import { current, lately, site, testimonials } from '@/lib/content';
 import { formatNoteDate, getNoteIndex } from '@/lib/notes';
 import { Section } from '@/components/Section';
 import { SiteFooter } from '@/components/SiteFooter';
@@ -41,11 +41,6 @@ export default function Home() {
                 LinkedIn
               </a>
             </li>
-            <li>
-              <a className="link" href={site.cv} {...external}>
-                CV
-              </a>
-            </li>
           </ul>
         </header>
 
@@ -62,6 +57,16 @@ export default function Home() {
           <p className="mt-6 text-[0.95rem] text-muted">
             I can&apos;t share the code or name the clients. That&apos;s how client work goes.
           </p>
+          {testimonials.length > 0 ? (
+            <ul className="mt-8 space-y-5 border-t border-rule pt-6">
+              {testimonials.map((item) => (
+                <li key={item.text}>
+                  <blockquote>&ldquo;{item.text}&rdquo;</blockquote>
+                  <p className="mt-1 text-[0.95rem] italic text-muted">{item.who}</p>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </Section>
 
         {notes.length > 0 ? (

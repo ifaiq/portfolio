@@ -1,0 +1,41 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { SiteFooter } from '@/components/SiteFooter';
+import { getQuotes } from '@/lib/quotes';
+
+export const metadata: Metadata = {
+  title: 'Quotes',
+  description: 'Lines worth keeping, by Faiq Shariff.',
+  alternates: { canonical: '/quotes' },
+};
+
+export default function QuotesPage() {
+  const quotes = getQuotes();
+
+  return (
+    <>
+      <main id="main" className="mx-auto w-full max-w-[36rem] px-6">
+        <div className="pt-20 md:pt-28">
+          <Link href="/" className="link text-[0.95rem] italic text-muted">
+            Faiq Shariff
+          </Link>
+          <h1 className="mt-6 text-[2rem] leading-[1.1] tracking-[-0.012em] md:text-[2.4rem]">Quotes</h1>
+
+          {quotes.length === 0 ? (
+            <p className="mt-6 text-muted">Nothing here yet.</p>
+          ) : (
+            <ul className="mt-10 space-y-10">
+              {quotes.map((quote) => (
+                <li key={quote.text}>
+                  <blockquote className="text-[1.18rem] leading-[1.55]">{quote.text}</blockquote>
+                  {quote.source ? <p className="mt-2 text-[0.95rem] italic text-muted">{quote.source}</p> : null}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}

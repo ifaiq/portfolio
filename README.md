@@ -41,7 +41,7 @@ There is no login, no admin page and no public form. A note exists because it wa
 | `app/notes/page.tsx` | The notes index |
 | `app/notes/[slug]/page.tsx` | A single note |
 | `lib/notes.ts` | Reads and renders notes |
-| `lib/content.ts` | Name, tagline, email, links, the "Lately" list |
+| `lib/content.ts` | Name, tagline, email, links, current work, the "Lately" list |
 | `components/` | Section wrapper and footer |
 | `app/globals.css` | Colour tokens, base type, note typography |
 

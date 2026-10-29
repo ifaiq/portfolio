@@ -1,5 +1,5 @@
 ﻿import Link from 'next/link';
-import { lately, site } from '@/lib/content';
+import { current, lately, site } from '@/lib/content';
 import { formatNoteDate, getNoteIndex } from '@/lib/notes';
 import { Section } from '@/components/Section';
 import { SiteFooter } from '@/components/SiteFooter';
@@ -12,15 +12,57 @@ export default function Home() {
   return (
     <>
       <main id="main" className="mx-auto w-full max-w-[36rem] px-6">
-        <header className="pt-20 md:pt-28">
-          <h1 className="text-[2.3rem] leading-[1.08] tracking-[-0.012em] md:text-[2.8rem]">{site.name}</h1>
-          <p className="mt-4 text-[1.2rem] italic text-muted md:text-[1.32rem]">{site.tagline}</p>
-          <p className="mt-8">
-            I&apos;m a software engineer in Pakistan, and I&apos;ve spent eight years on backends — mostly SaaS
-            products, mostly Node and TypeScript, Python when there&apos;s data or a model involved. Lately more of it
-            is AI.
+        <header className="pt-16 md:pt-24">
+          <p className="text-[0.95rem] italic text-accent">{site.name}</p>
+          <h1 className="mt-5 text-[2.1rem] leading-[1.12] tracking-[-0.015em] md:text-[2.6rem]">
+            I build the part of your app you can&apos;t see.
+          </h1>
+          <p className="mt-4 text-[1.2rem] leading-[1.5] md:text-[1.3rem]">
+            It keeps your data safe, sends your messages, connects to other software, and makes AI do something
+            useful. If it works, nobody notices. If it breaks, everyone does.
           </p>
+          <p className="mt-8">
+            I&apos;ve done this for eight years. Right now I do it at 10Pearls, building software for their clients.
+          </p>
+          <p className="mt-6 text-[0.95rem] italic text-muted">{site.tagline}</p>
+          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[0.95rem]">
+            <li>
+              <a className="link" href={`mailto:${site.email}`}>
+                Email
+              </a>
+            </li>
+            <li>
+              <a className="link" href={site.links.github} {...external}>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a className="link" href={site.links.linkedin} {...external}>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a className="link" href={site.cv} {...external}>
+                CV
+              </a>
+            </li>
+          </ul>
         </header>
+
+        <Section id="now" label="What I&apos;m doing now">
+          <ul className="space-y-6">
+            {current.map((item) => (
+              <li key={item.name}>
+                <h3 className="text-[1.08rem] italic">{item.name}</h3>
+                <p className="mt-1.5">{item.problem}</p>
+                <p className="mt-2">{item.description}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-[0.95rem] text-muted">
+            I can&apos;t share the code or name the clients. That&apos;s how client work goes.
+          </p>
+        </Section>
 
         {notes.length > 0 ? (
           <Section id="notes" label="Notes">
@@ -38,7 +80,7 @@ export default function Home() {
               ))}
             </ul>
             {notes.length > 3 ? (
-              <p className="mt-6 text-[1rem]">
+              <p className="mt-6">
                 <Link href="/notes" className="link">
                   All notes
                 </Link>
@@ -57,45 +99,35 @@ export default function Home() {
 
         <Section id="about" label="About">
           <p>
-            The work has mostly been at small companies, where one person tends to own the whole backend. That suits
-            me. I like knowing how the parts depend on each other, and where a system will break first.
-          </p>
-          <p className="mt-4">Outside work: fitness, philosophy, and how things work.</p>
-        </Section>
-
-        <Section id="work" label="Work">
-          <p>
-            Eight years of backend work at small product companies: a warehouse system, a consumer app, an AI platform.
+            I&apos;m Faiq. I&apos;ve spent eight years building the back end of apps: the part that holds the data and
+            talks to everything else.
           </p>
           <p className="mt-4">
-            Titles, dates and companies are on{' '}
+            I&apos;m good at the boring questions. Where does this number come from? What happens if two people click
+            at once? What breaks first when the site gets busy?
+          </p>
+          <p className="mt-4">Outside work: fitness, philosophy, and finding out how things work.</p>
+          <p className="mt-4">
+            Before 10Pearls I worked on online stores, delivery software, phone apps, and a farm sensor that ran on
+            solar power. The longer version is on{' '}
             <a className="link" href={site.links.linkedin} {...external}>
               LinkedIn
             </a>
-            , which stays current. This page doesn&apos;t.
+            .
           </p>
         </Section>
 
         <Section id="contact" label="Contact">
-          <p>Email is the easiest way to reach me.</p>
+          <p>
+            Email me and tell me what you&apos;re building and where it&apos;s stuck. I&apos;ll tell you straight if I
+            can help.
+          </p>
           <p className="mt-3">
             <a className="link text-[1.12rem]" href={`mailto:${site.email}`}>
               {site.email}
             </a>
           </p>
-          <p className="mt-8 text-[0.95rem] text-muted">
-            <a className="link" href={site.links.github} {...external}>
-              GitHub
-            </a>
-            {' · '}
-            <a className="link" href={site.links.linkedin} {...external}>
-              LinkedIn
-            </a>
-            {' · '}
-            <a className="link" href={site.cv} {...external}>
-              CV
-            </a>
-          </p>
+          <p className="mt-6 text-muted">I&apos;m open to side projects, and to full-time work if it&apos;s the right fit.</p>
         </Section>
       </main>
       <SiteFooter />

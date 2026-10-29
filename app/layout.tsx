@@ -11,14 +11,13 @@ const newsreader = Newsreader({
   display: 'swap',
 });
 
-const description =
-  'Faiq Shariff is a software engineer in Pakistan, working mostly on backends. Notes and the things he is building.';
+const description = 'I build the part of a product you cannot see: the data, the messages, the payments, and the AI.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: site.name,
-    template: `%s — ${site.name}`,
+    template: `%s · ${site.name}`,
   },
   description,
   alternates: { canonical: '/' },

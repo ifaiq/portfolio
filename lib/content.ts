@@ -11,8 +11,38 @@
   },
 };
 
+export type Engagement = {
+  name: string;
+  problem: string;
+  description: string;
+};
+
+export const current: Engagement[] = [
+  {
+    name: 'A tool for managers and their teams',
+    problem:
+      'Goals and feedback lived in spreadsheets and email. Nobody read them until review season, and then everyone wrote a year of notes in a week.',
+    description:
+      'We built the part that keeps goals and check-ins in one place, and keeps them private. It handles sign-ins and payments, and it uses AI to help write the feedback nobody wants to write. I decided how the pieces fit together.',
+  },
+  {
+    name: 'A WhatsApp helper for a gas company',
+    problem:
+      'Customers ask for help on WhatsApp, usually with a voice note or a blurry photo of a bill. Someone had to listen to it, type it out, find the account, and copy a bill number across by hand.',
+    description:
+      'Our system reads the message, looks up the customer, and answers. Voice notes become text, and photos get checked before they go anywhere.',
+  },
+  {
+    name: 'A quoting tool for electrical equipment',
+    problem:
+      'A quote depends on a pile of rules: one choice changes the next one. Most of those rules lived in a few people\u2019s heads, so quotes were built by hand, slowly, and checked twice.',
+    description:
+      'We built the part that takes the order, works through the choices, checks it with AI, and builds the quote. The rules live in software now, where they can be tested.',
+  },
+];
+
 export const lately = [
-  'AI inside products that already have users — what it costs to run, how it fails, when a plain feature is better.',
-  'Systems design, mostly the question of how much complexity a product actually needs.',
-  'Fitness, which has nothing to do with the other two.',
+  'How much AI a product really needs, and when a plain feature is the better answer.',
+  'Keeping software simple enough that someone new can understand it.',
+  'The gym, which has nothing to do with the other two.',
 ];

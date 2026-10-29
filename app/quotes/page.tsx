@@ -18,9 +18,9 @@ export default function QuotesPage() {
         {quotes.length === 0 ? (
           <p className="mt-6 text-muted">Nothing here yet.</p>
         ) : (
-          <ul className="mt-10 space-y-10">
+          <ul className="mt-10 divide-y divide-rule border-t border-rule">
             {quotes.map((quote) => (
-              <li key={quote.text}>
+              <li key={quote.text} className="py-8 last:pb-0">
                 <blockquote className="text-[1.18rem] leading-[1.55]">{quote.text}</blockquote>
                 {quote.source ? <p className="mt-2 text-[0.95rem] italic text-muted">{quote.source}</p> : null}
               </li>

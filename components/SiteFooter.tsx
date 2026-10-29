@@ -24,7 +24,6 @@ export function SiteFooter() {
             </>
           ) : null}
         </p>
-        <p className="mt-2 italic">Set in Newsreader. Built with Next.js.</p>
       </div>
     </footer>
   );

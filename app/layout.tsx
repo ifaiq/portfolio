@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Newsreader } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
+import { SiteFooter } from '@/components/SiteFooter';
+import { SiteHeader } from '@/components/SiteHeader';
 import { site } from '@/lib/content';
 import './globals.css';
 
@@ -52,7 +54,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         >
           Skip to content
         </a>
+        <SiteHeader />
         {children}
+        <SiteFooter />
         <Analytics />
       </body>
     </html>

@@ -11,10 +11,6 @@ const config = {
         rule: 'var(--rule)',
         accent: 'var(--accent)',
       },
-      fontFamily: {
-        serif: ['var(--font-newsreader)', 'Georgia', 'serif'],
-        mono: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
-      },
     },
   },
   plugins: [],

@@ -1,6 +1,5 @@
 ﻿import type { Metadata, Viewport } from 'next';
 import { Newsreader } from 'next/font/google';
-import { GeistMono } from 'geist/font/mono';
 import { Analytics } from '@vercel/analytics/react';
 import { site } from '@/lib/content';
 import './globals.css';
@@ -13,12 +12,12 @@ const newsreader = Newsreader({
 });
 
 const description =
-  'Faiq Shariff is a software engineer in Pakistan. Eight years of backend work: Node.js, TypeScript, Python, distributed systems, and more recently AI inside products.';
+  'Faiq Shariff is a software engineer in Pakistan, working mostly on backends. Notes and the things he is building.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — software engineer`,
+    default: site.name,
     template: `%s — ${site.name}`,
   },
   description,
@@ -27,13 +26,13 @@ export const metadata: Metadata = {
     type: 'website',
     url: '/',
     siteName: site.name,
-    title: `${site.name} — software engineer`,
+    title: site.name,
     description,
     images: [{ url: '/faiq.jpg', alt: 'Faiq Shariff' }],
   },
   twitter: {
     card: 'summary',
-    title: `${site.name} — software engineer`,
+    title: site.name,
     description,
     images: ['/faiq.jpg'],
   },
@@ -46,11 +45,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={newsreader.variable}>
       <body className="font-serif">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-ink focus:px-4 focus:py-2 focus:font-mono focus:text-[0.7rem] focus:uppercase focus:tracking-[0.14em] focus:text-paper"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
         >
           Skip to content
         </a>

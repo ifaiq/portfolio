@@ -1,17 +1,30 @@
+﻿import Link from 'next/link';
 import { site } from '@/lib/content';
+import { getNoteIndex } from '@/lib/notes';
 
 export function SiteFooter() {
+  const hasNotes = getNoteIndex().length > 0;
+
   return (
-    <footer className="mx-auto w-full max-w-[52rem] px-6 pb-12 md:px-10">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3 border-t border-rule pt-6 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-muted">
+    <footer className="mx-auto w-full max-w-[36rem] px-6 pb-16">
+      <div className="mt-16 border-t border-rule pt-5 text-[0.95rem] text-muted">
         <p>
           © {new Date().getFullYear()} {site.name}
         </p>
-        <p>
-          <a href="#main" className="link">
-            Top
+        <p className="mt-2">
+          <a className="link" href={`mailto:${site.email}`}>
+            {site.email}
           </a>
+          {hasNotes ? (
+            <>
+              {' · '}
+              <Link className="link" href="/notes">
+                Notes
+              </Link>
+            </>
+          ) : null}
         </p>
+        <p className="mt-2 italic">Set in Newsreader. Built with Next.js.</p>
       </div>
     </footer>
   );

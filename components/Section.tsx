@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+﻿import type { ReactNode } from 'react';
 
 type SectionProps = {
   id: string;
@@ -11,15 +11,12 @@ export function Section({ id, label, children }: SectionProps) {
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className="grid gap-x-8 gap-y-4 border-t border-rule py-12 md:grid-cols-[7rem_minmax(0,1fr)] md:py-16"
+      className="mt-16 border-t border-rule pt-5 md:mt-20"
     >
-      <h2
-        id={`${id}-heading`}
-        className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-muted md:pt-1.5"
-      >
+      <h2 id={`${id}-heading`} className="text-[0.95rem] italic text-accent">
         {label}
       </h2>
-      <div className="min-w-0">{children}</div>
+      <div className="mt-4">{children}</div>
     </section>
   );
 }

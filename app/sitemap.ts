@@ -1,7 +1,10 @@
-import type { MetadataRoute } from 'next';
+﻿import type { MetadataRoute } from 'next';
 import { site } from '@/lib/content';
+import { getNotes } from '@/lib/notes';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const notes = getNotes();
+
   return [
     {
       url: site.url,
@@ -9,5 +12,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 1,
     },
+    {
+      url: `${site.url}/notes`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    ...notes.map((note) => ({
+      url: `${site.url}/notes/${note.slug}`,
+      lastModified: note.date ? new Date(`${note.date}T00:00:00Z`) : new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    })),
   ];
 }

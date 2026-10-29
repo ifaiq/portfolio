@@ -1,39 +1,59 @@
-import type { Metadata } from 'next';
-import { Hanken_Grotesk } from 'next/font/google';
-import './globals.css';
-import Navbar from '@/components/Navbar';
+﻿import type { Metadata, Viewport } from 'next';
+import { Newsreader } from 'next/font/google';
+import { GeistMono } from 'geist/font/mono';
 import { Analytics } from '@vercel/analytics/react';
+import { site } from '@/lib/content';
+import './globals.css';
 
-const hankenGrotesk = Hanken_Grotesk({
+const newsreader = Newsreader({
   subsets: ['latin'],
-  weight: ['400', '700', '800'],
-  variable: '--font-hanken-grotesk',
+  style: ['normal', 'italic'],
+  variable: '--font-newsreader',
+  display: 'swap',
 });
 
+const description =
+  'Faiq Shariff is a software engineer in Pakistan. Eight years of backend work: Node.js, TypeScript, Python, distributed systems, and more recently AI inside products.';
+
 export const metadata: Metadata = {
-  title: 'Faiq Shariff',
-  description: 'Welcome to my portfolio website',
-  openGraph: {
-    title: 'Faiq Shariff',
-    description: 'Welcome to my portfolio website',
-    images: [
-      {
-        url: '/faiq.jpg',
-        alt: 'Faiq Shariff Portfolio', // Optional: Alt text for the image
-      },
-    ],
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} — software engineer`,
+    template: `%s — ${site.name}`,
   },
+  description,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    url: '/',
+    siteName: site.name,
+    title: `${site.name} — software engineer`,
+    description,
+    images: [{ url: '/faiq.jpg', alt: 'Faiq Shariff' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: `${site.name} — software engineer`,
+    description,
+    images: ['/faiq.jpg'],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: '#faf8f4',
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`select-none bg-gradient-to-r from-white to-black antialiased ${hankenGrotesk.className}`}>
-        {/* <Navbar /> */}
+    <html lang="en" className={`${newsreader.variable} ${GeistMono.variable}`}>
+      <body className="font-serif">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-ink focus:px-4 focus:py-2 focus:font-mono focus:text-[0.7rem] focus:uppercase focus:tracking-[0.14em] focus:text-paper"
+        >
+          Skip to content
+        </a>
         {children}
         <Analytics />
       </body>

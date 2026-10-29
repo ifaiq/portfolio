@@ -29,6 +29,11 @@ export default function Home() {
             </a>
           </li>
           <li>
+            <a className="link" href={site.links.github} {...external}>
+              GitHub
+            </a>
+          </li>
+          <li>
             <a className="link" href={site.links.linkedin} {...external}>
               LinkedIn
             </a>

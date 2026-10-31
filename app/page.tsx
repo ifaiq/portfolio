@@ -12,11 +12,10 @@ export default function Home() {
     <main id="main" className="mx-auto w-full max-w-[36rem] px-6">
       <div className="pt-10 md:pt-16">
         <h1 className="text-[2.1rem] leading-[1.12] tracking-[-0.015em] md:text-[2.6rem]">
-          I build the part of your app you can&apos;t see.
+          I build the part of your app that has to keep working.
         </h1>
         <p className="mt-4 text-[1.2rem] leading-[1.5] md:text-[1.3rem]">
-          It keeps your data safe, sends your messages, connects to other software, and makes AI do something useful.
-          If it works, nobody notices. If it breaks, everyone does.
+          The data, the payments, the messages, the AI. If it works, nobody notices. If it breaks, everyone does.
         </p>
         <p className="mt-8">
           I&apos;ve done this for eight years, mostly for other people&apos;s products rather than my own.
@@ -25,7 +24,7 @@ export default function Home() {
         <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[0.95rem]">
           <li>
             <a className="link" href={`mailto:${site.email}`}>
-              Email
+              Email me
             </a>
           </li>
           <li>
